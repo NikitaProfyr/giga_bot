@@ -23,12 +23,17 @@
 Запускаем xTunnel.
 
 ```
-xtunnel 8000
+xtunnel 8080
 ```
 
 Создайте файл .env и скопируйте тудаданные из файла env.template
 ### Заполнение переменных окружения
-TG_TOKEN - переменная для токена вашего Telegram бота
-WEBHOOK_SECRET_KEY - рандомная строка, сгенерировать ее вы можете на сайте https://it-tools.tech/token-generator?length=57
-CLIENT_SECRET_GIGA_CHAT_API и AUTHORIZATION_DATA_GIGA_CHAT_API - можете получить, зарегистрировавшись на сайте https://developers.sber.ru/studio/workspaces/
+- XTUNNEL_URL = при запуске xTunnel вам нужно скапировать первый адрес с протоколом https
+- TG_TOKEN - переменная для токена вашего Telegram бота
+- WEBHOOK_SECRET_KEY - рандомная строка, сгенерировать ее вы можете на сайте https://it-tools.tech/token-generator?length=57
+- CLIENT_SECRET_GIGA_CHAT_API и AUTHORIZATION_DATA_GIGA_CHAT_API - можете получить, зарегистрировавшись на сайте https://developers.sber.ru/studio/workspaces/
 создайте проект в котором вам дадут доступ к секретному ключу и данным авторизации подробнее [https://developers.sber.ru/docs/ru/gigachat/individuals-quickstart]
+
+# Установите [Docker](https://www.docker.com/products/docker-desktop/), если он у вас отсутствует
+- Откройте терминал в директории с проектом. 
+- Введите команду: docker compose up --build server
