@@ -8,7 +8,7 @@ client = httpx.AsyncClient()
 
 async def send_message(data):
     """Функция отправляет сообщение пользователю"""
-    method = 'sendMessage'
+    method = "sendMessage"
     url = TELEGRAM_API_URL + method
     response = await client.post(url, json=data, timeout=10)
 
@@ -17,7 +17,7 @@ async def send_message(data):
 
 async def delete_message(data):
     """Функция удаляет сообщение в диалоге"""
-    method = 'deleteMessage'
+    method = "deleteMessage"
     url = TELEGRAM_API_URL + method
     response = await client.post(url, json=data, timeout=10)
 

@@ -4,8 +4,13 @@
 from asyncio import current_task
 
 import redis.asyncio as redis
-from sqlalchemy.ext.asyncio import create_async_engine, AsyncAttrs, async_sessionmaker, async_scoped_session, \
-    AsyncSession
+from sqlalchemy.ext.asyncio import (
+    create_async_engine,
+    AsyncAttrs,
+    async_sessionmaker,
+    async_scoped_session,
+    AsyncSession,
+)
 
 from sqlalchemy.orm import DeclarativeBase
 from dotenv import load_dotenv
@@ -77,4 +82,3 @@ async def get_redis() -> redis.Redis:
         yield db
     finally:
         await db.close()
-

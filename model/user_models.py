@@ -10,4 +10,4 @@ class User(Base):
     tg_channel_id = Column(String, nullable=True, unique=True)
 
     def __str__(self):
-        return f'{self.id} {self.user_name}'
+        return f"{self.id} {self.user_name}"

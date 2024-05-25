@@ -16,10 +16,10 @@ config = context.config
 
 section = config.config_ini_section
 
-config.set_section_option(section, 'POSTGRES_USER', getenv('POSTGRES_USER'))
-config.set_section_option(section, 'POSTGRES_PASSWORD', getenv('POSTGRES_PASSWORD'))
-config.set_section_option(section, 'POSTGRES_HOST', getenv('POSTGRES_HOST'))
-config.set_section_option(section, 'POSTGRES_DB', getenv('POSTGRES_DB'))
+config.set_section_option(section, "POSTGRES_USER", getenv("POSTGRES_USER"))
+config.set_section_option(section, "POSTGRES_PASSWORD", getenv("POSTGRES_PASSWORD"))
+config.set_section_option(section, "POSTGRES_HOST", getenv("POSTGRES_HOST"))
+config.set_section_option(section, "POSTGRES_DB", getenv("POSTGRES_DB"))
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
 if config.config_file_name is not None:

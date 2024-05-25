@@ -17,13 +17,19 @@ async def created_user(user_data: UserSchema, db: AsyncSession):
     if user:
         user.user_name = user_data.user_name
     else:
-        user = User(id=int(user_data.id), user_name=user_data.user_name, tg_channel_id=user_data.tg_channel_id)
+        user = User(
+            id=int(user_data.id),
+            user_name=user_data.user_name,
+            tg_channel_id=user_data.tg_channel_id,
+        )
     db.add(user)
     await db.commit()
     return HTTP_200_OK
 
 
-async def set_status_chat(chat_id: int, status_chat: str, redis: redis.Redis = Depends(get_redis)):
+async def set_status_chat(
+    chat_id: int, status_chat: str, redis: redis.Redis = Depends(get_redis)
+):
     """Функция устанавливает статус чата в редис"""
     await redis.set(chat_id, status_chat)
 
@@ -33,11 +39,13 @@ async def delete_status_chat(chat_id: int, redis: redis.Redis = Depends(get_redi
     await redis.delete(chat_id)
 
 
-async def check_status_chat(chat_id: int, redis: redis.Redis = Depends(get_redis)) -> bool | None:
-    """Функция проверяет статус чата, если статус """
+async def check_status_chat(
+    chat_id: int, redis: redis.Redis = Depends(get_redis)
+) -> bool | None:
+    """Функция проверяет статус чата, если статус"""
     status_chat = await redis.get(chat_id)
-    if status_chat == 'With AI':
+    if status_chat == "With AI":
         return True
-    if status_chat == 'With Assistent':
+    if status_chat == "With Assistent":
         return False
     return None
