@@ -35,5 +35,6 @@ xtunnel 8080
 создайте проект в котором вам дадут доступ к секретному ключу и данным авторизации подробнее [https://developers.sber.ru/docs/ru/gigachat/individuals-quickstart]
 
 # Установите [Docker](https://www.docker.com/products/docker-desktop/), если он у вас отсутствует
+# Запустите проект
 - Откройте терминал в директории с проектом. 
 - Введите команду: docker compose up --build server
